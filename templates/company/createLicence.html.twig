@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% form_theme formLicence 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+      <style>
+      .blue{
+        float:right;
+     
+          margin-bottom:10px;
+          margin-left:400px;
+      }
+        .space{
+        float:right;
+      
+          margin-left:150px;
+      }
+      .a{
+          float:right;
+      }
+      
+      h2{color:#485785}</style>
+     
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+ {% if editMode %}
+<h2>Make changes on this Equipement</h2>
+{% else %}
+<h2 >Create your New  Licence</h2>
+{% endif %}
+{{form_start(formLicence)}}
+<hr>{{form_row(formLicence.Product_name,{'attr':{'placeholder':'Product Name','class':"blue"}})}}
+{{form_row(formLicence.User,{'attr':{'placeholder':'User name','class':"blue"}})}}<hr>
+
+
+{{form_row(formLicence.category,{'attr':{'placeholder':'Licence Type','class':"blue"}})}}
+{{form_row(formLicence.Compilance_type,{'attr':{'Compilance Type':'State','class':"blue"}})}}
+{{form_row(formLicence.Supplier,{'attr':{'placeholder':'Supplier Name'}})}}
+{{form_row(formLicence.Purchase_date)}}
+
+{{form_row(formLicence.expiration_date,{'attr':{'class':"red"}})}}
+
+
+<br><br>
+<button type="submit" class=" btn btn-info btn-lg float-right">
+{% if editMode %}
+Update Licence
+{% else %}
+Add New Licence
+{% endif %}
+</button>{{form_end(formLicence)}}
+<br><br><br><br>
+</div>
+</section></section></div>
+{% endblock %}

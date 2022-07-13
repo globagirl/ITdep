@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+a{color:black;}
+h2{color:#485785}
+.b{margin-left:700px;
+padding-right:400px;}
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info2">
+   
+     <h2>Inbox</h2>
+      <br><br>{{form_start(form)}}
+
+    <div class="form-row align-items-end">
+    <div class="col-sm">
+      {{form_row(form.email)}}
+    </div>
+    
+    <div class="form-group">
+    <button class=" btn search">
+                        <i class="fa fa-search"></i></button>
+    
+     {{form_end(form)}}
+     
+    
+    <a class="btn search" href='/company/email'>
+                        <i class="fa fa-redo"></i></button></a></div>
+ </div>
+ <div class="table-inbox-wrap ">
+                            <table class="table table-inbox table-hover">
+                               <thead>
+    <tr>
+      
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Content</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+                        <tbody>
+                      {% for email in emails %}
+    <tr>
+    
+                            
+      <td scope="row">{{email.user.username}}</th>
+       <td scope="row">{{email.email}}</th>
+      <td>{{email.content}}</td>
+        <td> <a href="{{path('email_show',{'id':email.id})}}"><i class="far fa-eye"></i></a>
+          
+           
+           <a href="{{path('email_delete',{'id':email.id})}}" onclick="return confirm('Are you sure you want to delete this item?');" ><i class="fas fa-trash "></i> </a>
+          </td>
+      
+    </tr>
+   {% endfor %}
+                           
+                          
+                        </tbody>
+                        </table>
+
+   </div>
+</div>
+</section></section>
+  
+     {% endblock %}
+{% block javascripts %}
+<script src="{{ asset('js/main.js') }}"></script>
+<script>
+function myFunction() {
+  alert("Equipment is Now being deleted");
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% form_theme formTransaction 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+      <style>
+      .blue{
+        float:right;
+     
+          margin-bottom:10px;
+          margin-left:400px;
+      }
+        .space{
+        float:right;
+      
+          margin-left:150px;
+      }
+      .a{
+          float:right;
+      }
+      
+      h2{color:#485785}</style>
+     
+
+     <section id="main-content">
+	<section class="wrapper">
+  <div class="table-agile-info">
+ 
+<h2 >Choose a Product and make your New  Transaction</h2>
+<br>
+{{form_start(formTransaction)}}
+{{form_row(formTransaction.TransactionDate)}}
+{{form_row(formTransaction.product,{'attr':{'placeholder':'Product Name','class':"blue"}})}}
+{{form_row(formTransaction.type,{'attr':{'placeholder':'User name','class':"blue"}})}}<hr>
+
+{{form_row(formTransaction.quantity,{'attr':{'min':'0','class':"blue"}})}}
+
+
+{{form_row(formTransaction.note,{'attr':{'Compilance Type':'State','class':"blue"}})}}
+
+
+<br><br><br>
+<button type="submit" class=" btn btn-info btn-lg float-right">
+Make Transaction
+</button>{{form_end(formTransaction)}}
+<br><br>
+</div>
+</section>
+<br><br><br><br>
+</section>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+a{color:black;}
+th,h2,p,strong{color:#485785}
+ @media print{
+
+      body *{
+        visibility: hidden;
+      }
+      .print-container, .print-container *{visibility: visible;}
+    }
+</style>
+
+<section id="main-content">
+	<section class="wrapper">
+		<div class="table-agile-info">
+     <div class="container "> <h2><i class="fas fa-info-circle"></i> Details about your Product : <strong></strong></h2><br><br>
+  
+     <div class="card text-center">
+    
+  <div class="card-header print-container panel-heading">
+   <strong> Product   {{product.id}}</strong>
+  </div>
+  <div class="card-body print-container">
+    <h5 class="card-title"><strong>Reference: </strong> {{product.reference}}</h5>
+    <p class="card-title"><strong>StockingArea:</strong> {{product.StockingArea}}</p>
+    <p class="card-title"><strong>Manufacturer:</strong> {{product.manufacturer}}</p>
+    <p class="card-text"><strong>Quantity:</strong> {{product.quantity}}</p>
+    <p class="card-text"><strong>Description:</strong> {{product.description}}</p>
+     <p class="card-text"><strong>Transactions made:</strong> {{product.transactions | length}}</p>
+      </div>
+  <div class="card-footer text-muted">
+  <a href="{{path('product_edit',{'id':product.id})}}" class="btn btn-warning" title="" >
+  
+                <i class="fas fa-edit"></i>
+                
+            </a>
+            
+ <a  class="btn btn-info" title="" onclick="window.print();" >
+  
+                <i class="fas fa-print"></i>
+                
+            </a>
+  </div>
+</div>
+     
+          
+     <br><br>
+   
+</div>
+</section></section></div><br><br><br>
+
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('js/main.js') }}"></script>
+<script>
+function myFunction() {
+  alert("Equipment is Now being deleted");
+}
+</script>
+<script>
+    function printPage() {
+      window.print();
+    }
+    </script>
+
+{% endblock %}

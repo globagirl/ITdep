@@ -1,0 +1,34 @@
+{#{% extends 'base.html.twig' %}#}
+{#{% block body %}#}
+    <style>
+        .a{
+            margin-left:500px;
+            margin-right:500px;
+            margin-top:50px;
+        }
+    </style>
+
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="table-agile-info">
+
+                <div class="container"><br><br><br>
+                    <div class="card" style=" width:50rem;">
+                        <div class="card-header panel-heading" >
+                            <strong> Add a New  User</strong>
+                        </div>
+                        <div class="card-body">
+                            {{form_start(form)}}
+                            <p class="card-text">{{form_row(form.email,{'attr':{'placeholder':'xyz@gmail.com'}})}}</p>
+                            <p class="card-text">{{form_row(form.username,{'attr':{'placeholder':'Type in your username'}})}}</p>
+                            <button type="submit" class="btn btn-info float-right">Submit</button>
+                            {{form_end(form)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <br><br><br><br><br><br><br><br>
+
+{#{% endblock  %}#}
