@@ -8,21 +8,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class SecurityController extends AbstractController
 {
-    /**
-     * @Route("/security", name="security")
-     */
-    /*  public function index(): Response
-      {
-          return $this->render('security/index.html.twig', [
-              'controller_name' => 'SecurityController',
-          ]);
-      }*/
 
     /**
      * @Route("/registration", name="security_registration")
@@ -45,9 +35,15 @@ class SecurityController extends AbstractController
             $hash = $encoder->encodePassword($user,$user->getPassword());
 
             $message = (new \Swift_Message('Confirmation Email'))
-                ->setFrom('khaoula.starzelectronics@gmail.com')
+                ->setFrom('support@starzelectronics.com')
                 ->setTo($user->getEmail())
-                ->setBody( $user->getPassword() );
+                ->setBody(
+                    $this->renderView(
+                        'email/registration.html.twig',
+                        [ 'pass'=>$user->getPassword()]
+                    ),
+                    'text/html'
+                );
 
             $mailer->send($message);
 

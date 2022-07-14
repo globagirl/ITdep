@@ -1,0 +1,16 @@
+{# templates/emails/registration.html.twig #}
+<h3>
+    Congratulations!
+</h3>
+Your registration is confirmed.<br>
+The password generated for your account is : <small>{{ pass }}</small>
+
+<p>It's recommended to change your password after your first login.</p>
+
+{# example, assuming you have a route named "login" #}
+<a href="{{ url('security_login') }}" class="btn btn-primary">Access Dashboard</a>
+
+<br>
+Thanks,<br>
+The Starz IT team<br>
+<img src="{{ absolute_url(asset('images/logo.png')) }}">

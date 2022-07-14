@@ -1,0 +1,109 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Symfony template
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+# Email spool folder
+/app/spool/*
+
+# Cache, session files and logs (Symfony3)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+!var/sessions/.gitkeep
+
+# Logs (Symfony4)
+/var/log/*
+!var/log/.gitkeep
+
+# Parameters
+/app/config/parameters.yml
+/app/config/parameters.ini
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/symfony_requirements
+/vendor/
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Composer PHAR
+/composer.phar
+
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
+
+# Embedded web-server pid file
+/.web-server-pid
+
+.gitignore
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/workspace.xml
+var/
+vendor/autoload.php
+vendor/bin/
+vendor/composer/
+vendor/doctrine/annotations/
+vendor/doctrine/cache/
+vendor/doctrine/collections/
+vendor/doctrine/common/
+vendor/doctrine/data-fixtures/
+vendor/doctrine/dbal/
+vendor/doctrine/deprecations/.github/
+vendor/doctrine/deprecations/.gitignore
+vendor/doctrine/deprecations/README.md
+vendor/doctrine/deprecations/composer.json
+vendor/doctrine/deprecations/lib/
+vendor/doctrine/deprecations/phpcs.xml
+vendor/doctrine/deprecations/phpunit.xml.dist
+vendor/doctrine/deprecations/test_fixtures/src/
+vendor/doctrine/deprecations/tests/
+vendor/doctrine/doctrine-bundle/
+vendor/doctrine/doctrine-fixtures-bundle/
+vendor/doctrine/doctrine-migrations-bundle/
+vendor/doctrine/event-manager/
+vendor/doctrine/inflector/
+vendor/doctrine/instantiator/
+vendor/doctrine/lexer/
+vendor/doctrine/migrations/
+vendor/doctrine/orm/
+vendor/doctrine/persistence/
+vendor/doctrine/sql-formatter/
+vendor/egulias/
+vendor/friendsofphp/
+vendor/fzaninotto/
+vendor/knplabs/
+vendor/laminas/
+vendor/monolog/
+vendor/myclabs/
+vendor/nikic/
+vendor/phar-io/
+vendor/phpdocumentor/
+vendor/phpspec/
+vendor/phpunit/
+vendor/psr/
+vendor/sebastian/
+vendor/sensio/
+vendor/swiftmailer/
+vendor/symfony/
+vendor/theseer/
+vendor/twig/
+vendor/webmozart/
